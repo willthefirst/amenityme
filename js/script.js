@@ -1,18 +1,38 @@
 var map;
-var yelp_oauth = "&oauth_consumer_key=Y4Z0bLHQbC0xCYIwRdcEwQ&oauth_consumer_secret=s2tiJI5_8EkOhPtNaa-9TCdUD0k&oauth_token=cb44rDWqHj9kUv14JKcWGCcUmNBNvB7r&oauth_token_secret=7o0qKmwthBi6shogVQiEd0zYmUs&oauth_signature_method=hmac-sha1&oauth_signature="
+var service;
+var request;
+var mainAddress;
+var placeTypes = ['hospital', 'store', 'restaurant'];
 
 function initMap() {
+  mainAddress = new google.maps.LatLng(40.70876, -73.94139);
+
+  // Initialize main map
   map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: -34.397, lng: 150.644},
-    zoom: 8
+    center: mainAddress,
+    zoom: 15
   });
+
+  // Request each place type
+  for (var i = 0; i < placeTypes.length; i++) {
+    findPlaces(placeTypes[i]);
+  }
+
+
 }
 
-// Laundry: Search Yelp
-$.ajax({
-  method: "GET",
-  url: "https://api.yelp.com/v2/search?term=laundry&cll=-73.94139,40.70876" + yelp_oauth,
-  dataType: "jsonp"
-}).done(function( msg ) {
-    console.log( "Data Saved: " + msg );
+var findPlaces = function(place) {
+  request = {
+    location: mainAddress,
+    radius: '500',
+    types: place
+  }
+
+  service = new google.maps.places.PlacesService(map);
+  service.nearbySearch(request, function(results) {
+    console.log("Request for " + place);
+    for (var j = 0; j < results.length; j++) {
+      console.log(place, '|', results[j].name);
+    }
   });
+}
