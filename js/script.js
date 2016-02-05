@@ -2,7 +2,7 @@ var map;
 var service;
 var request;
 var mainAddress;
-var placeTypes = ['hospital', 'store', 'restaurant'];
+var placeTypes = ['restaurant', 'hospital', 'cafe'];
 
 function initMap() {
   mainAddress = new google.maps.LatLng(40.70876, -73.94139);
@@ -25,7 +25,7 @@ var findPlaces = function(place) {
   request = {
     location: mainAddress,
     radius: '500',
-    types: place
+    types: [place]
   }
 
   service = new google.maps.places.PlacesService(map);
