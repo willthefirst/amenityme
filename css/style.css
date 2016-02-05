@@ -1,4 +1,7 @@
-body {
-  background-color: red; }
+.results {
+  height: 500px; }
+
+#map {
+  height: 100%; }
 
 /*# sourceMappingURL=style.css.map */
