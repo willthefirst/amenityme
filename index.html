@@ -14,81 +14,59 @@
       </header>
       <form class="amenity-form" action="index.html" method="post">
         <div class="form-group">
-          <p>
-            Which address are you interested in?
-          </p>
-          <label for="form-address">Address</legend>
-          <input type="text" class="form-control" id="form-adress" name="address" value="">
+          <div class="row">
+            <div class="col-sm-2">
+              <div class="form-group">
+                <p>
+                  Which address are you interested in?
+                </p>
+                <label for="form-address">Address</label>
+                <input type="text" class="form-control" id="form-address" name="address" value="">
+              </div>
+              <div class="form-group">
+                <button class="btn btn-default btn-primary" type="submit">Submit</button>
+              </div>
+              <p>Which amenities do you need?</p>
+              <div class="checkbox">
+                <label><input type="checkbox" name="amenity-type" value="laundry"> Laundry</label>
+              </div>
+              <div class="checkbox">
+                <label><input type="checkbox" name="amenity-type" value="subway_station"> Subway</label>
+              </div>
+              <div class="checkbox">
+                <label><input type="checkbox" name="amenity-type" value="cafe"> Coffee</label>
+              </div>
+              <div class="checkbox">
+                <label><input type="checkbox" name="amenity-type" value="grocery_or_supermarket"> Grocery</label>
+              </div>
+              <div class="checkbox">
+                <label><input type="checkbox" name="amenity-type" value="restaurant"> Restaurants</label>
+              </div>
+              <div class="checkbox">
+                <label><input type="checkbox" name="amenity-type" value="gym"> Gym</label>
+              </div>
+              <div class="checkbox">
+                <label><input type="checkbox" name="amenity-type" value="atm"> ATM</label>
+              </div>
+              <div class="checkbox">
+                <label><input type="checkbox" name="amenity-type" value="hospital"> Hospital</label>
+              </div>
+              <div class="checkbox">
+                <label><input type="checkbox" name="amenity-type" value="bar"> Bar</label>
+              </div>
+              <div class="checkbox">
+                <label><input type="checkbox" name="amenity-type" value="convenience_store"> Convenience Store</label>
+              </div>
+            </div>
+            <div class="col-sm-10 results">
+              <div id="map"></div>
+            </div>
+          </div>
         </div>
-        <div class="form-group">
-          <p>Which amenities do you need?</p>
-          <div class="checkbox">
-            <label><input type="checkbox" name="amenity-type" value=""> Laundry</label>
-          </div>
-          <div class="checkbox">
-            <label><input type="checkbox" name="amenity-type" value=""> Subway</label>
-          </div>
-          <div class="checkbox">
-            <label><input type="checkbox" name="amenity-type" value=""> Coffee</label>
-          </div>
-          <div class="checkbox">
-            <label><input type="checkbox" name="amenity-type" value=""> Grocery</label>
-          </div>
-          <div class="checkbox">
-            <label><input type="checkbox" name="amenity-type" value=""> Restaurants</label>
-          </div>
-        </div>
-        <button class="btn btn-default" type="submit">Submit</button>
       </form>
-      <div class="results row">
-        <div class="col-md-12">
-          <h2>Laundry</h2>
-          <div class="laundry-results">
-
-          </div>
-        </div>
-        <div class="col-md-12">
-          <h2>Subway</h2>
-          <div class="subway-results">
-
-          </div>
-        </div>
-        <div class="col-md-12">
-          <h2>Coffee</h2>
-          <div class="">
-
-          </div>
-        </div>
-        <div class="col-md-12">
-          <h2>Grocery</h2>
-          <div class="">
-
-          </div>
-        </div>
-        <div class="col-md-12">
-          <h2>Restaurants</h2>
-          <div class="">
-
-          </div>
-        </div>
-
-        <div class="col-md-12">
-          <h2>Gym</h2>
-          <div class="">
-
-          </div>
-        </div>
-
-        <div class="col-md-12">
-          <h2>Commute</h2>
-          <div class="">
-
-          </div>
-        </div>
-        <div id="map">
-        </div>
-      </div>
+      <footer>by <a href="http://www.willthefirst.com">willthefirst</a></footer>
     </div>
+    
     <!-- jQuery -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
     <!-- Script -->

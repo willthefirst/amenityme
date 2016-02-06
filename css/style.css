@@ -1,7 +1,17 @@
+header {
+  margin-bottom: 20px; }
+
 .results {
   height: 500px; }
 
 #map {
   height: 100%; }
+
+#form-address {
+  width: 100%; }
+
+footer {
+  text-align: center;
+  padding: 12px; }
 
 /*# sourceMappingURL=style.css.map */
