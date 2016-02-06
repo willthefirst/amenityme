@@ -2,28 +2,44 @@ var map;
 var service;
 var request;
 var mainAddress;
+var autocomplete;
+var apiLoaded = false;
 // Place types: https://developers.google.com/places/supported_types
 var placeTypes = ['restaurant', 'hospital', 'cafe', 'gym', 'cafe', 'atm', 'bar', 'subway_station'];
 
-function initMap() {
-  mainAddress = new google.maps.LatLng(40.70876, -73.94139);
+$(document).ready(function() {
+  // On submit, center map on user's address
+  $("#amenity-form").submit(function(e) {
+    e.preventDefault();
+    initMap();
+  });
+});
 
+var mapReady = function() {
+  apiLoaded = true;
+  var input = document.getElementById("form-address");
+  autocomplete = new google.maps.places.Autocomplete(input);
+}
+
+function initMap(coordinates) {
+  var mainAddress = new google.maps.LatLng(autocomplete.getPlace().geometry.location.lat(), autocomplete.getPlace().geometry.location.lng());
   // Initialize main map
   map = new google.maps.Map(document.getElementById('map'), {
     center: mainAddress,
     zoom: 16
   });
 
+  // Place home marker
   var marker = new google.maps.Marker({
     map: map,
     position: mainAddress,
-    icon: "img/home.svg"
+    icon: "img/home.png"
   });
+
   // Request each place type
   for (var i = 0; i < placeTypes.length; i++) {
     getPlaces(placeTypes[i]);
   }
-
 }
 
 // Gets place data from Google

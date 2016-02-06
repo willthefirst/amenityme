@@ -12,10 +12,10 @@
       <header>
         <h1>Amenity Me <small>Find nearby amenities</small></h1>
       </header>
-      <form class="amenity-form" action="index.html" method="post">
+      <form id="amenity-form" action="" method="post">
         <div class="form-group">
           <div class="row">
-            <div class="col-sm-2">
+            <div class="col-sm-3">
               <div class="form-group">
                 <p>
                   Which address are you interested in?
@@ -58,20 +58,20 @@
                 <label><input type="checkbox" name="amenity-type" value="convenience_store"> Convenience Store</label>
               </div>
             </div>
-            <div class="col-sm-10 results">
+            <div class="col-sm-19 results">
               <div id="map"></div>
             </div>
           </div>
         </div>
       </form>
-      <footer>by <a href="http://www.willthefirst.com">willthefirst</a></footer>
+      <footer>by <a href="http://willthefirst.com">willthefirst</a></footer>
     </div>
-    
+
     <!-- jQuery -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
     <!-- Script -->
     <script type="text/javascript" src="js/script.js"></script>
     <!-- Google Maps JS API -->
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD4wveSNaYviqBZMu0_qfBPyZF7ivjahP4&libraries=places&callback=initMap"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD4wveSNaYviqBZMu0_qfBPyZF7ivjahP4&libraries=places&callback=mapReady"></script>
   </body>
 </html>
